@@ -5,8 +5,8 @@ This project consolidates API documentation for multiple projects. Each project 
 
 ### Projects
 
-- [Auth API](./auth.md)
-- [123Code API](./123code.md)
+- [Auth API](auth.md)
+- [123Code API](123code.md)
 
 ## How to Use
 Click on any project link above to access its API documentation.
