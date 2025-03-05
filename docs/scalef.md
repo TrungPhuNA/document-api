@@ -38,7 +38,17 @@ API cung cấp các dịch vụ liên quan đến việc tạo và quản lý QR
         "message": "Unauthorized"
       }
       ```
+    - **Status Code:** `400`
+    - **Content-Type:** `application/json`
+    - **Body:**
+      ```json
+      {
+        "status": "fail",
+        "data": "URL is required"
+      }
+      ```
     - **Mô tả lỗi:**
+        - `400`: Lỗi validate dữ liệu
         - `401`: Token không hợp lệ hoặc đã hết hạn
         - `403`: Không có quyền truy cập
         - `500`: Lỗi server
