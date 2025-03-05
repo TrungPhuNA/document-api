@@ -1,7 +1,7 @@
 # Scalef API Documentation
 
 ## Tổng Quan
-Tổng hợp các API liên quan đến dự án Scalef, bao gồm các chức năng xác thực token và tạo QR code.
+Tổng hợp các API liên quan đến dự án Scalef
 
 - **Base URL:** `https://pub-be-stag.mp.directsale.vn/`
 - **Version:** `v2`
@@ -57,6 +57,21 @@ Tổng hợp các API liên quan đến dự án Scalef, bao gồm các chức n
         "data": "Thông tin không hợp lệ"
       }
       ```
+- **Response Error:**
+    - **Status Code:** `200`
+    - **Content-Type:** `application/json`
+    - **Body:**
+      ```json
+      {
+            "status": "fail",
+            "data": {
+                "type": [
+                    "The type field is required."
+                ]
+            }
+        }
+      ```
+    - **Description:** Lỗi này xẩy ra khi truyền vào thiếu các thông tin required 
 
 ### QR Code
 
