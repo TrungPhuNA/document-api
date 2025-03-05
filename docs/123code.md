@@ -1,4 +1,4 @@
-![Logo](https://123code.net/images/logo.png)
+<img src="https://123code.net/images/logo.png" width="130px" alt="Logo">
 
 # 123Code API Documentation
 
