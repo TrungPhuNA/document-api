@@ -29,29 +29,34 @@ API cung cấp các dịch vụ liên quan đến việc tạo và quản lý QR
     - **Body:** Binary data của ảnh QR code
 
 - **Response Error:**
-    - **Status Code:** `401`
-    - **Content-Type:** `application/json`
-    - **Body:**
-      ```json
-      {
-        "status": "error",
-        "message": "Unauthorized"
-      }
-      ```
-    - **Status Code:** `400`
+    - **Status Code:** `200`
     - **Content-Type:** `application/json`
     - **Body:**
       ```json
       {
         "status": "fail",
-        "data": "URL is required"
+        "data": "URL không được để trống"
       }
       ```
-    - **Mô tả lỗi:**
-        - `400`: Lỗi validate dữ liệu
-        - `401`: Token không hợp lệ hoặc đã hết hạn
-        - `403`: Không có quyền truy cập
-        - `500`: Lỗi server
+    - **Status Code:** `200`
+    - **Content-Type:** `application/json`
+    - **Body:**
+      ```json
+      {
+        "status": "fail",
+        "data": "Không thể tạo mã QR code"
+      }
+      ```
+    - **Status Code:** `200`
+    - **Content-Type:** `application/json`
+    - **Body:**
+      ```json
+      {
+        "status": "fail",
+        "data": "Không thể tạo mã QR code. Vui lòng thử lại sau."
+      }
+      ```
+    
 
 #### Lưu ý:
 - Token cần được cung cấp dưới dạng Bearer token trong header Authorization
