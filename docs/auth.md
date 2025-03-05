@@ -1,3 +1,5 @@
+![Logo](https://123code.net/images/logo.png)
+
 # Lưu tài liệu dưới dạng file Markdown
 **Tài liệu API - [Tên dự án của bạn]**
 

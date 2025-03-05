@@ -1,3 +1,5 @@
+![Logo](https://123code.net/images/logo.png)
+
 # 123Code API Documentation
 
 ## Overview
