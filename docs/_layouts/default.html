@@ -103,15 +103,112 @@
       a:hover {
         text-decoration: underline;
       }
+      /* TOC styles */
+      .toc {
+        position: fixed;
+        left: 20px;
+        top: 100px;
+        width: 280px;
+        max-height: calc(100vh - 120px);
+        overflow-y: auto;
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      }
+      .toc-title {
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        color: #1a73e8;
+      }
+      .toc ul {
+        list-style: none;
+        padding-left: 0;
+      }
+      .toc li {
+        margin: 8px 0;
+        padding-left: 15px;
+      }
+      .toc a {
+        color: #586069;
+        text-decoration: none;
+        font-size: 14px;
+        display: block;
+        padding: 3px 0;
+      }
+      .toc a:hover {
+        color: #1a73e8;
+      }
+      .toc li li {
+        padding-left: 20px;
+      }
+      .content {
+        margin-left: 320px;
+      }
+      @media (max-width: 1200px) {
+        .toc {
+          display: none;
+        }
+        .content {
+          margin-left: 0;
+        }
+      }
     </style>
   </head>
   <body>
-    <div class="container-lg">
-      <div class="logo-container">
-        {{ content | replace: '<img src="https://123code.net/images/logo.png"', '<img class="logo" src="https://123code.net/images/logo.png"' }}
+    <div class="toc">
+      <div class="toc-title">Mục lục</div>
+      <div id="toc-content"></div>
+    </div>
+    <div class="content">
+      <div class="container-lg">
+        <div class="logo-container">
+          {{ content | replace: '<img src="https://123code.net/images/logo.png"', '<img class="logo" src="https://123code.net/images/logo.png"' }}
+        </div>
       </div>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js" integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous"></script>
-    <script>anchors.add();</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js"></script>
+    <script>
+      // Generate TOC
+      document.addEventListener('DOMContentLoaded', function() {
+        const headings = document.querySelectorAll('h1, h2, h3');
+        const tocContent = document.getElementById('toc-content');
+        const toc = document.createElement('ul');
+        
+        headings.forEach((heading, index) => {
+          // Add ID to heading if not exists
+          if (!heading.id) {
+            heading.id = `heading-${index}`;
+          }
+          
+          const li = document.createElement('li');
+          const a = document.createElement('a');
+          a.href = `#${heading.id}`;
+          a.textContent = heading.textContent;
+          
+          // Add indentation based on heading level
+          li.style.paddingLeft = `${(heading.tagName[1] - 1) * 20}px`;
+          
+          li.appendChild(a);
+          toc.appendChild(li);
+        });
+        
+        tocContent.appendChild(toc);
+      });
+      
+      // Add smooth scrolling
+      document.querySelectorAll('.toc a').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+          });
+        });
+      });
+      
+      // Add anchors to headings
+      anchors.add();
+    </script>
   </body>
 </html> 
