@@ -1,7 +1,7 @@
 title: API Documentation
 description: API Documentation for various projects
-theme: jekyll-theme-cayman
-favicon: https://123code.net/images/favicon.png
+theme: jekyll-theme-primer
+favicon: https://123code.net/images/logo.png
 
 # Google Analytics
 google_analytics: # your Google Analytics tracking ID here 
