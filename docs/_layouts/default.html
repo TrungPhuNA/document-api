@@ -7,12 +7,81 @@
     <link rel="shortcut icon" type="image/png" href="{{ site.favicon }}">
     {% seo %}
     <link rel="stylesheet" href="{{ "/assets/css/style.css?v=" | append: site.github.build_revision | relative_url }}">
+    <style>
+      .toc {
+        position: fixed;
+        left: 20px;
+        top: 20px;
+        width: 280px;
+        max-height: calc(100vh - 40px);
+        overflow-y: auto;
+        padding: 20px;
+        background: #f6f8fa;
+        border: 1px solid #e1e4e8;
+        border-radius: 6px;
+      }
+      .content {
+        margin-left: 320px;
+      }
+      @media (max-width: 1200px) {
+        .toc {
+          display: none;
+        }
+        .content {
+          margin-left: 0;
+        }
+      }
+    </style>
   </head>
   <body>
-    <div class="container-lg px-3 my-5 markdown-body">
-      {{ content }}
+    <div class="toc">
+      <h3>Mục lục</h3>
+      <div id="toc-content"></div>
+    </div>
+    <div class="content">
+      <div class="container-lg px-3 my-5 markdown-body">
+        {{ content }}
+      </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js"></script>
-    <script>anchors.add();</script>
+    <script>
+      // Generate TOC
+      document.addEventListener('DOMContentLoaded', function() {
+        const headings = document.querySelectorAll('h1, h2, h3');
+        const tocContent = document.getElementById('toc-content');
+        const toc = document.createElement('ul');
+        
+        headings.forEach((heading, index) => {
+          if (!heading.id) {
+            heading.id = `heading-${index}`;
+          }
+          
+          const li = document.createElement('li');
+          const a = document.createElement('a');
+          a.href = `#${heading.id}`;
+          a.textContent = heading.textContent;
+          
+          // Add indentation based on heading level
+          li.style.paddingLeft = `${(heading.tagName[1] - 1) * 20}px`;
+          
+          li.appendChild(a);
+          toc.appendChild(li);
+        });
+        
+        tocContent.appendChild(toc);
+      });
+      
+      // Add smooth scrolling
+      document.querySelectorAll('.toc a').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+          });
+        });
+      });
+      
+      anchors.add();
+    </script>
   </body>
 </html> 
