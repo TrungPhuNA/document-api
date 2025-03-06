@@ -28,13 +28,13 @@ Tổng hợp các API liên quan đến dự án Scalef.
     }
     ```
 - **🔢 Parameters:**
-
-| Tham số      | Bắt buộc | Kiểu dữ liệu | Mô tả |
-|-------------|---------|------------|------|
-| `network_id` | ✅ | `integer` | ID của network |
-| `type` | ✅ | `string` | Loại port (ví dụ: `"PUB"`) |
-| `time` | ✅ | `string` | Thời gian hết hạn của token, định dạng `MM/DD/YYYY, HH:MM:SS AM/PM` |
-| `token` | ✅ | `string` | Token cần render |
+    
+    | Tham số      | Bắt buộc | Kiểu dữ liệu | Mô tả |
+    |-------------|---------|------------|------|
+    | `network_id` | ✅ | `integer` | ID của network |
+    | `type` | ✅ | `string` | Loại port (ví dụ: `"PUB"`) |
+    | `time` | ✅ | `string` | Thời gian hết hạn của token, định dạng `MM/DD/YYYY, HH:MM:SS AM/PM` |
+    | `token` | ✅ | `string` | Token cần render |
 
 #### ✅ Response Success:
 - **🆗 Status Code:** `200`
@@ -63,9 +63,9 @@ Tổng hợp các API liên quan đến dự án Scalef.
     ```
 - **🔢 Parameters:**
 
-| Tham số      | Bắt buộc | Kiểu dữ liệu | Mô tả                                                               |
-|-------------|---------|------------|---------------------------------------------------------------------|
-| `encode_data` | ✅ | `string` | Là dữ liệu được trả ra từ các API                                   | |
+    | Tham số      | Bắt buộc | Kiểu dữ liệu | Mô tả                                                               |
+    |-------------|---------|------------|---------------------------------------------------------------------|
+    | `encode_data` | ✅ | `string` | Là dữ liệu được trả ra từ các API                                   | |
 
 #### ✅ Response Success:
 - **🆗 Status Code:** `200`
@@ -86,17 +86,17 @@ Tổng hợp các API liên quan đến dự án Scalef.
     - **📤 Body:**
     ```json
     {
-       "status": "error",
-       "message": "Unauthorized network access token",
-       "errorCode": ""
+        "status": "error",
+        "message": "Unauthorized network access token",
+        "errorCode": ""
     }
     ```
     ```json
-      {
-         "status": "error",
-         "message": "The only supported ciphers are AES-128-CBC and AES-256-CBC with the correct key lengths.",
-         "errorCode": ""
-      }
+    {
+        "status": "error",
+        "message": "The only supported ciphers are AES-128-CBC and AES-256-CBC with the correct key lengths.",
+        "errorCode": ""
+    }
     ```
 ---
 
@@ -253,12 +253,12 @@ Tổng hợp các API liên quan đến dự án Scalef.
 
 - **🔢 Parameters:**
 
-| Tham số | Bắt buộc | Kiểu dữ liệu | Mô tả |
-|---------|---------|------------|------|
-| `X-Network-Id` | ✅ | `integer` | ID của network |
-| `X-Port-Type` | ✅ | `string` | Loại port (`PUB`) |
-| `Authorization` | ✅ | `string` | Bearer token để xác thực user |
-| `X-Network-Token` | ✅ | `string` | Token xác thực network |
+    | Tham số | Bắt buộc | Kiểu dữ liệu | Mô tả |
+    |---------|---------|------------|------|
+    | `X-Network-Id` | ✅ | `integer` | ID của network |
+    | `X-Port-Type` | ✅ | `string` | Loại port (`PUB`) |
+    | `Authorization` | ✅ | `string` | Bearer token để xác thực user |
+    | `X-Network-Token` | ✅ | `string` | Token xác thực network |
 
 #### ✅ Response Success:
 - **🆗 Status Code:** `200`
@@ -304,7 +304,6 @@ Tổng hợp các API liên quan đến dự án Scalef.
 ## 📌 Lưu ý:
 - **Authorization:** Token cần được cung cấp dưới dạng Bearer token trong header `Authorization`.
 - **X-Network-Token:** Là token bắt buộc để xác thực network.
-- **Response:** Nếu thành công, API sẽ trả về ảnh QR code trực tiếp.
 
 ---
 
