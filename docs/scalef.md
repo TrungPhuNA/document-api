@@ -49,10 +49,9 @@ Tổng hợp các API liên quan đến dự án Scalef.
     }
     ```
 
-#### ❌ Response Error:
+#### ❌ Response Error || Fail:
 1. **Trường hợp thông tin không hợp lệ**
     - **🆗 Status Code:** `200`
-    - **📄 Content-Type:** `application/json`
     - **📤 Body:**
       ```json
       {
@@ -60,10 +59,17 @@ Tổng hợp các API liên quan đến dự án Scalef.
          "data": "Thông tin không hợp lệ"
       }
       ```
+      ```json
+      {
+          "status": "error",
+          "message": "The only supported ciphers are AES-128-CBC and AES-256-CBC with the correct key lengths.",
+          "errorCode": ""
+      }
+      ```
+
 
 2. **Trường hợp thiếu thông tin required**
     - **🆗 Status Code:** `200`
-    - **📄 Content-Type:** `application/json`
     - **📤 Body:**
       ```json
       {
