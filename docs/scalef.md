@@ -12,7 +12,7 @@ Tổng hợp các API liên quan đến dự án Scalef.
 
 ## 🚀 Danh sách các API
 
-### 🔑 Render Token
+### 🔑 Tạo Bearer Token
 - **🛣 URL:** `/api/v2/gen-token`
 - **📝 Method:** `POST`
 - **📩 Headers:**
@@ -49,43 +49,58 @@ Tổng hợp các API liên quan đến dự án Scalef.
     }
     ```
 
+### 🔑 Giải mã dữ liệu
+- **🛣 URL:** `/api/v2/decode-data`
+- **📝 Method:** `POST`
+- **📩 Headers:**
+    - `X-Port-Type: PUB`
+    - `Content-Type: application/json`
+- **📥 Request Body:**
+    ```json
+    {
+       "encode_data": "eyJpdiI6Im1scTV2dmdBOEhcL ..."
+    }
+    ```
+- **🔢 Parameters:**
+
+| Tham số      | Bắt buộc | Kiểu dữ liệu | Mô tả                                                               |
+|-------------|---------|------------|---------------------------------------------------------------------|
+| `encode_data` | ✅ | `string` | Là dữ liệu được trả ra từ các API                                   | |
+
+#### ✅ Response Success:
+- **🆗 Status Code:** `200`
+- **📤 Body:**
+    ```json
+    {
+        "status": "success",
+        "data": {
+            
+        }
+    }
+    ```
+    Dữ liệu đc giải mã
+
 #### ❌ Response Error || Fail:
 1. **Trường hợp thông tin không hợp lệ**
     - **🆗 Status Code:** `200`
     - **📤 Body:**
-      ```json
+    ```json
+    {
+       "status": "error",
+       "message": "Unauthorized network access token",
+       "errorCode": ""
+    }
+    ```
+    ```json
       {
-         "status": "fail",
-         "data": "Thông tin không hợp lệ"
+         "status": "error",
+         "message": "The only supported ciphers are AES-128-CBC and AES-256-CBC with the correct key lengths.",
+         "errorCode": ""
       }
-      ```
-      ```json
-      {
-          "status": "error",
-          "message": "The only supported ciphers are AES-128-CBC and AES-256-CBC with the correct key lengths.",
-          "errorCode": ""
-      }
-      ```
-
-
-2. **Trường hợp thiếu thông tin required**
-    - **🆗 Status Code:** `200`
-    - **📤 Body:**
-      ```json
-      {
-         "status": "fail",
-         "data": {
-             "type": [
-                 "The type field is required."
-             ]
-         }
-      }
-      ```
-    - **📝 Description:** Lỗi này xảy ra khi thiếu thông tin bắt buộc.
-
+    ```
 ---
 
-### 🔗 Social Signup
+### 🔗 Login Social
 - **🛣 URL:** `/api/v1/auth/social-signup`
 - **📝 Method:** `POST`
 - **📩 Headers:**
@@ -96,18 +111,18 @@ Tổng hợp các API liên quan đến dự án Scalef.
     - **Chỉ được chọn một trong hai trường hợp:**
         1. Truyền `id_token`, **không cần** `social_data`
         2. Truyền `social_data`, **không cần** `id_token`
-
-| Tham số        | Bắt buộc | Kiểu dữ liệu | Mô tả |
-|---------------|--------|------------|------|
-| `provider` | ✅ | `string` | Loại tài khoản (`google`, `facebook`, v.v.) |
-| `id_token` | ❌ (Bắt buộc nếu không có `social_data`) | `string` | Token ID của user từ provider |
-| `social_data` | ❌ (Bắt buộc nếu không có `id_token`) | `object` | Thông tin user từ provider |
-| `social_data.email` | ✅ (nếu có `social_data`) | `string` | Email của user |
-| `social_data.username` | ✅ (nếu có `social_data`) | `string` | Tên đăng nhập |
-| `social_data.given_name` | ❌ | `string` | Tên của user |
-| `social_data.family_name` | ❌ | `string` | Họ của user |
-| `social_data.google_id` | ✅ | `string` | ID Google của user |
-| `social_data.avatar` | ❌ | `string` | Link avatar của user |
+    
+    | Tham số        | Bắt buộc | Kiểu dữ liệu | Mô tả |
+    |---------------|--------|------------|------|
+    | `provider` | ✅ | `string` | Loại tài khoản (`google`, `facebook`, v.v.) |
+    | `id_token` | ❌ (Bắt buộc nếu không có `social_data`) | `string` | Token ID của user từ provider |
+    | `social_data` | ❌ (Bắt buộc nếu không có `id_token`) | `object` | Thông tin user từ provider |
+    | `social_data.email` | ✅ (nếu có `social_data`) | `string` | Email của user |
+    | `social_data.username` | ✅ (nếu có `social_data`) | `string` | Tên đăng nhập |
+    | `social_data.given_name` | ❌ | `string` | Tên của user |
+    | `social_data.family_name` | ❌ | `string` | Họ của user |
+    | `social_data.google_id` | ✅ | `string` | ID Google của user |
+    | `social_data.avatar` | ❌ | `string` | Link avatar của user |
 
 #### ✅ Trường hợp 1: Sử dụng `id_token`
 - **📥 Request Body:**
