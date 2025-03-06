@@ -13,9 +13,6 @@ Tổng hợp các API liên quan đến dự án Scalef
 ## Danh sách các API
 
 ### Render Token
-
-#### Tạo Token
-
 - **URL:** `/api/v2/gen-token`
 - **Method:** `POST`
 - **Headers:**
@@ -76,8 +73,6 @@ Tổng hợp các API liên quan đến dự án Scalef
     - **Description:** Lỗi này xẩy ra khi truyền vào thiếu các thông tin required 
 
 ### QR Code
-
-#### Tạo QR Code
 
 - **URL:** `/api/v2/qr-code`
 - **Method:** `GET`
