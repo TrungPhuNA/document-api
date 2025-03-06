@@ -1,8 +1,6 @@
 # API Documentation
 
-## Danh sách API
-
-### [Crosscheck API](./crosscheck.md)
+## [Crosscheck API](./crosscheck.md)
 - **ADMIN**
   - B2B
     - BBDS và DNTT
@@ -11,7 +9,7 @@
     - CRUD User
       - Create User
 
-### [Scalef API](./scalef.md)
+## [Scalef API](./scalef.md)
 - **Render Token**
   - Tạo Token (`POST /api/v2/gen-token`)
 - **QR Code**
