@@ -90,6 +90,7 @@ Tổng hợp các API liên quan đến dự án Scalef
             "avatar": "https://123code.net/images/logo.png"
         }
     }
+  ```
 ### QR Code
 
 - **URL:** `/api/v2/qr-code`

@@ -62,7 +62,6 @@
         background: #edf2ff;
         padding-left: 20px;
       }
-      /* Style for nested items */
       .toc li li a {
         color: #718096;
         padding-left: 30px;
@@ -93,7 +92,7 @@
   </head>
   <body>
     <div class="toc">
-      <h3>Xem nhanh nội dung</h3>
+      <h3>Table of Contents</h3>
       <div id="toc-content"></div>
     </div>
     <div class="content">
@@ -103,15 +102,13 @@
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js"></script>
     <script>
-      // Generate TOC
       document.addEventListener('DOMContentLoaded', function() {
         const headings = document.querySelectorAll('h1, h2, h3, h4');
         const tocContent = document.getElementById('toc-content');
         const toc = document.createElement('ul');
         
         headings.forEach((heading, index) => {
-          // Skip if this is the TOC title
-          if (heading.textContent.trim() === 'Xem nhanh nội dung') {
+          if (heading.textContent.trim() === 'Table of Contents') {
             return;
           }
           
@@ -124,7 +121,6 @@
           a.href = `#${heading.id}`;
           a.textContent = heading.textContent;
           
-          // Add indentation based on heading level
           const level = parseInt(heading.tagName[1]) - 1;
           if (level > 0) {
             a.style.paddingLeft = `${30 + (level - 1) * 15}px`;
@@ -139,7 +135,6 @@
         tocContent.appendChild(toc);
       });
       
-      // Add smooth scrolling
       document.querySelectorAll('.toc a').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
           e.preventDefault();
