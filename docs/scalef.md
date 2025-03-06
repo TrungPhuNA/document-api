@@ -92,7 +92,7 @@ Tổng hợp các API liên quan đến dự án Scalef.
         2. Truyền `social_data`, **không cần** `id_token`
 
 | Tham số        | Bắt buộc | Kiểu dữ liệu | Mô tả |
-|---------------|---------|------------|------|
+|---------------|--------|------------|------|
 | `provider` | ✅ | `string` | Loại tài khoản (`google`, `facebook`, v.v.) |
 | `id_token` | ❌ (Bắt buộc nếu không có `social_data`) | `string` | Token ID của user từ provider |
 | `social_data` | ❌ (Bắt buộc nếu không có `id_token`) | `object` | Thông tin user từ provider |
@@ -100,7 +100,7 @@ Tổng hợp các API liên quan đến dự án Scalef.
 | `social_data.username` | ✅ (nếu có `social_data`) | `string` | Tên đăng nhập |
 | `social_data.given_name` | ❌ | `string` | Tên của user |
 | `social_data.family_name` | ❌ | `string` | Họ của user |
-| `social_data.google_id` | ❌ | `string` | ID Google của user |
+| `social_data.google_id` | ✅ | `string` | ID Google của user |
 | `social_data.avatar` | ❌ | `string` | Link avatar của user |
 
 #### ✅ Trường hợp 1: Sử dụng `id_token`
