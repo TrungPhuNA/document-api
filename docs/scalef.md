@@ -1,3 +1,5 @@
+[← Back to Home](./index.md)
+
 # Scalef API Documentation
 
 ## Tổng Quan
