@@ -7,9 +7,7 @@ Tổng hợp các API liên quan đến dự án Scalef
 
 - **Base URL:** `https://pub-be-stag.mp.directsale.vn/`
 - **Version:** `v2`
-
 ---
-
 ## Danh sách các API
 
 ### Render Token
@@ -71,7 +69,27 @@ Tổng hợp các API liên quan đến dự án Scalef
         }
       ```
     - **Description:** Lỗi này xẩy ra khi truyền vào thiếu các thông tin required 
+### Social Signup
 
+- **URL:** `/api/v1/auth/social-signup`
+- **Method:** `POST`
+- **Headers:**
+  - `X-Port-Type: PUB`
+  - `Content-Type: application/json`
+- **Request Body:**
+    ```json
+    {
+        "_id_token": "123456789",
+        "provider": "google",
+        "social_data": {
+            "email": "phu994_009@gmail.com",
+            "username": "phu994_009",
+            "given_name": "phu",
+            "family_name": "phan",
+            "google_id": "google_0986420994_009",
+            "avatar": "https://123code.net/images/logo.png"
+        }
+    }
 ### QR Code
 
 - **URL:** `/api/v2/qr-code`
@@ -117,7 +135,7 @@ Tổng hợp các API liên quan đến dự án Scalef
       }
       ```
 
-#### Lưu ý:
+### Lưu ý:
 - Token cần được cung cấp dưới dạng Bearer token trong header Authorization
 - X-Network-Token là token bắt buộc để xác thực network
 - Response trả về trực tiếp là ảnh QR code nếu thành công
