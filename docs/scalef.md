@@ -10,7 +10,7 @@ Tổng hợp các API liên quan đến dự án Scalef
 
 ---
 
-## Endpoints
+## Danh sách các API
 
 ### Render Token
 
