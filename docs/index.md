@@ -1,15 +1,21 @@
-<img src="https://123code.net/images/logo.png" width="130px" alt="Logo">
-
 # API Documentation
 
-## Projects
+## Danh sách API
 
-- [Auth API](./auth.md)
-- [123Code API](./123code.md)
-- [Crosscheck API](./crosscheck.md)
-- [Scalef API](./scalef.md)
+### [Crosscheck API](./crosscheck.md)
+- **ADMIN**
+  - B2B
+    - BBDS và DNTT
+      - Lấy link BBDS và DNTT
+      - Get Categories
+    - CRUD User
+      - Create User
 
-Click vào một dự án để xem tài liệu chi tiết.
+### [Scalef API](./scalef.md)
+- **Render Token**
+  - Tạo Token (`POST /api/v2/gen-token`)
+- **QR Code**
+  - Tạo QR Code (`GET /api/v2/qr-code`)
 
 ---
 Powered by TrungPhuNA

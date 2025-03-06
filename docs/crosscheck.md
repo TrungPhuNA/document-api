@@ -1,5 +1,3 @@
-<img src="https://123code.net/images/logo.png" width="130px" alt="Logo">
-
 # Crosscheck API Documentation
 
 ## Overview
