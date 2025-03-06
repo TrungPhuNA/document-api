@@ -28,10 +28,13 @@ Tổng hợp các API liên quan đến dự án Scalef.
     }
     ```
 - **🔢 Parameters:**
-    - `network_id` *(required)*: ID của network
-    - `type` *(required)*: Loại port
-    - `time` *(required)*: Thời gian hết hạn của token
-    - `token` *(required)*: Token cần render
+
+| Tham số      | Bắt buộc | Kiểu dữ liệu | Mô tả |
+|-------------|---------|------------|------|
+| `network_id` | ✅ | `integer` | ID của network |
+| `type` | ✅ | `string` | Loại port (ví dụ: `"PUB"`) |
+| `time` | ✅ | `string` | Thời gian hết hạn của token, định dạng `MM/DD/YYYY, HH:MM:SS AM/PM` |
+| `token` | ✅ | `string` | Token cần render |
 
 #### ✅ Response Success:
 - **🆗 Status Code:** `200`
@@ -109,6 +112,15 @@ Tổng hợp các API liên quan đến dự án Scalef.
     - `Content-Type: application/json`
     - `Authorization: Bearer <access_token>`
     - `X-Network-Token: <network_token>`
+
+- **🔢 Parameters:**
+
+| Tham số | Bắt buộc | Kiểu dữ liệu | Mô tả |
+|---------|---------|------------|------|
+| `X-Network-Id` | ✅ | `integer` | ID của network |
+| `X-Port-Type` | ✅ | `string` | Loại port (`PUB`) |
+| `Authorization` | ✅ | `string` | Bearer token để xác thực user |
+| `X-Network-Token` | ✅ | `string` | Token xác thực network |
 
 #### ✅ Response Success:
 - **🆗 Status Code:** `200`
