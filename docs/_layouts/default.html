@@ -110,6 +110,11 @@
         const toc = document.createElement('ul');
         
         headings.forEach((heading, index) => {
+          // Skip if this is the TOC title
+          if (heading.textContent.trim() === 'Xem nhanh nội dung') {
+            return;
+          }
+          
           if (!heading.id) {
             heading.id = `heading-${index}`;
           }
