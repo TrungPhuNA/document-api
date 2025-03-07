@@ -12,7 +12,7 @@ Tổng hợp các API liên quan đến dự án Scalef.
 
 ## 🚀 Danh sách các API
 
-### 🔑 Tạo Token SDK
+### 📌 Tạo Token SDK
 - **🛣 URL:** `/api/v2/gen-token`
 - **📝 Method:** `POST`
 - **📩 Headers:**
@@ -49,7 +49,7 @@ Tổng hợp các API liên quan đến dự án Scalef.
     }
     ```
 
-### 🔑 Giải mã dữ liệu
+### 📌 Giải mã dữ liệu
 - **🛣 URL:** `/api/v2/decode-data`
 - **📝 Method:** `POST`
 - **📩 Headers:**
