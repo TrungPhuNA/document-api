@@ -242,6 +242,56 @@ Tổng hợp các API liên quan đến dự án Scalef.
     ```
 ---
 
+### 📌 Tạo link chia sẻ
+- **🛣 URL:** `/api/v2/get-referral-link`
+- **📝 Method:** `POST`
+- **📩 Headers:**
+    - `X-Network-Id: 1`
+    - `X-Port-Type: PUB`
+    - `Content-Type: application/json`
+    - `Authorization: Bearer <tokenSdk>`
+
+- **🔢 Parameters:**
+
+    | Tham số | Bắt buộc | Kiểu dữ liệu | Mô tả |
+    |---------|---------|------------|------|
+    | `X-Network-Id` | ✅ | `integer` | ID của network |
+    | `X-Port-Type` | ✅ | `string` | Loại port (`PUB`) |
+    | `Authorization` | ✅ | `string` | Bearer token để xác thực user |
+
+#### ✅ Response Success:
+- **🆗 Status Code:** `200`
+- **📄 Content-Type:** `image/*`
+- **📤 Body:** 
+    ```json
+    {
+        "status": "success",
+        "data": "eyJpdiI6IktpXC92U0I4VkdKVmhJZlFrNFlrT0Z3PT0iLCJ2YWx1ZSI6IjhwMHAxY052YkptdHJ5VjVzZmZUUWo4T0F6dDFabVFtVjF6OW1EbGpzMzNqR1VDVFpEWjk2MzlXbEhlK2VnVXcza0EzMmRMaWk4UFNiajhcL1hWSnV1dz09IiwibWFjIjoiODVkYTYxYWRmOTVlMmEyY2U3YmNlOTQ1NTQwMjQ4YTgyZjU3ZGZhZmI5ZGNiNzU3YTM3ZWVhMTA5YTNlMjY3YiJ9"
+    }
+    ```
+    Call API Giải mã dữ liệu
+    ```json
+        {
+        "status": "success",
+        "data": {
+            "deeplink": "https://206.189.86.199:20005/BUmhY7AJ"
+        }
+    } 
+    ```
+
+#### ❌ Response Error:
+1. **Trường hợp Errors**
+    - **🆗 Status Code:** `200`
+    - **📄 Content-Type:** `application/json`
+    - **📤 Body:**
+    ```json
+    {
+        "status": "fail",
+        "message": "Camp đăng kí phải là trạng thái Activated và chưa hết hạn",
+        "data": {}
+    }
+    ```
+---
 ### 📌 QR Code
 - **🛣 URL:** `/api/v2/qr-code`
 - **📝 Method:** `GET`
