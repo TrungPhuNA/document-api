@@ -2,7 +2,6 @@
 
 # 📘 Scalef API Documentation
 
-## 🏗 Tổng Quan
 Tổng hợp các API liên quan đến dự án Scalef.
 
 - **🌐 Base URL:** `https://pub-be-stag.mp.directsale.vn/`
@@ -10,9 +9,9 @@ Tổng hợp các API liên quan đến dự án Scalef.
 
 ---
 
-## 🚀 Danh sách các API
+# 🚀 Danh sách các API
 
-### 📌 API Tạo Token SDK
+## 📌 API Tạo Token SDK
 - **🛣 URL:** `/api/v2/gen-token`
 - **📝 Method:** `POST`
 - **📩 Headers:**
@@ -36,7 +35,7 @@ Tổng hợp các API liên quan đến dự án Scalef.
     | `time` | ✅ | `string` | Thời gian hết hạn của token, định dạng `MM/DD/YYYY, HH:MM:SS AM/PM` |
     | `token` | ✅ | `string` | Token cần render |
 
-#### ✅ Response Success:
+✅ Response Success:
 - **🆗 Status Code:** `200`
 - **📄 Content-Type:** `application/json`
 - **📤 Body:**
@@ -49,7 +48,7 @@ Tổng hợp các API liên quan đến dự án Scalef.
     }
     ```
 
-### 📌 API Giải mã dữ liệu
+## 📌 API Giải mã dữ liệu
 - **🛣 URL:** `/api/v2/decode-data`
 - **📝 Method:** `POST`
 - **📩 Headers:**
@@ -67,7 +66,7 @@ Tổng hợp các API liên quan đến dự án Scalef.
     |-------------|---------|------------|---------------------------------------------------------------------|
     | `encode_data` | ✅ | `string` | Là dữ liệu được trả ra từ các API                                   | |
 
-#### ✅ Response Success:
+✅ Response Success:
 - **🆗 Status Code:** `200`
 - **📤 Body:**
     ```json
@@ -80,7 +79,7 @@ Tổng hợp các API liên quan đến dự án Scalef.
     ```
     Dữ liệu đc giải mã
 
-#### ❌ Response Error || Fail:
+❌ Response Error || Fail:
 1. **Trường hợp thông tin không hợp lệ**
     - **🆗 Status Code:** `200`
     - **📤 Body:**
@@ -100,7 +99,7 @@ Tổng hợp các API liên quan đến dự án Scalef.
     ```
 ---
 
-### 📌 API Login Social
+## 📌 API Login Social
 - **🛣 URL:** `/api/v1/auth/social-signup`
 - **📝 Method:** `POST`
 - **📩 Headers:**
@@ -124,7 +123,7 @@ Tổng hợp các API liên quan đến dự án Scalef.
     | `social_data.google_id` | ✅ | `string` | ID Google của user |
     | `social_data.avatar` | ❌ | `string` | Link avatar của user |
 
-#### ✅ Trường hợp 1: Sử dụng `id_token`
+✅ Trường hợp 1: Sử dụng `id_token`
 - **📥 Request Body:**
     ```json
     {
@@ -133,7 +132,7 @@ Tổng hợp các API liên quan đến dự án Scalef.
     }
     ```
 
-#### ✅ Trường hợp 2: Sử dụng `social_data`
+✅ Trường hợp 2: Sử dụng `social_data`
 - **📥 Request Body:**
     ```json
     {
@@ -149,7 +148,7 @@ Tổng hợp các API liên quan đến dự án Scalef.
     }
     ```
 
-#### ❌ Response Error:
+❌ Response Error:
 - **📄 Lỗi khi thiếu `id_token` hoặc `social_data`**
     ```json
     {
@@ -165,7 +164,7 @@ Tổng hợp các API liên quan đến dự án Scalef.
     }
     ```
 
-#### ✅ Response Success:
+✅ Response Success:
 - **📄 Body:**
     ```json
     {
@@ -242,7 +241,7 @@ Tổng hợp các API liên quan đến dự án Scalef.
     ```
 ---
 
-### 📌 API Tạo link chia sẻ
+## 📌 API Tạo link chia sẻ
 - **🛣 URL:** `/api/v2/get-referral-link`
 - **📝 Method:** `POST`
 - **📩 Headers:**
@@ -258,7 +257,7 @@ Tổng hợp các API liên quan đến dự án Scalef.
     | `campaign_id` | ✅ | `integer` | ID Campaign |
     | `identifier_id` | ✅ | `string` | Mã định danh user |
 
-#### ✅ Response Success:
+✅ Response Success:
 - **🆗 Status Code:** `200`
 - **📄 Content-Type:** `image/*`
 - **📤 Body:** 
@@ -278,7 +277,7 @@ Tổng hợp các API liên quan đến dự án Scalef.
     } 
     ```
 
-#### ❌ Response Error:
+❌ Response Error:
 1. **Trường hợp Errors**
     - **🆗 Status Code:** `200`
     - **📄 Content-Type:** `application/json`
@@ -292,7 +291,7 @@ Tổng hợp các API liên quan đến dự án Scalef.
     ```
 ---
 
-### 📌 API QR Code
+## 📌 API QR Code
 - **🛣 URL:** `/api/v2/qr-code`
 - **📝 Method:** `GET`
 - **📩 Headers:**
@@ -311,12 +310,12 @@ Tổng hợp các API liên quan đến dự án Scalef.
     | `Authorization` | ✅ | `string` | Bearer token để xác thực user |
     | `X-Network-Token` | ✅ | `string` | Token xác thực network |
 
-#### ✅ Response Success:
+✅ Response Success:
 - **🆗 Status Code:** `200`
 - **📄 Content-Type:** `image/*`
 - **📤 Body:** Binary data của ảnh QR code
 
-#### ❌ Response Error:
+❌ Response Error:
 1. **Trường hợp URL bị thiếu**
     - **🆗 Status Code:** `200`
     - **📄 Content-Type:** `application/json`
