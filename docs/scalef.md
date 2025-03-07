@@ -241,6 +241,68 @@ Tổng hợp các API liên quan đến dự án Scalef.
     ```
 ---
 
+## 📌 API Report
+- **🛣 URL:** `/api/v2/publisher/conversion`
+- **📝 Method:** `GET`
+- **📩 Headers:**
+    - `X-Network-Id: 1`
+    - `X-Port-Type: PUB`
+    - `Content-Type: application/json`
+    - `Authorization: Bearer <access_token>`
+
+---
+
+### **🔢 Parameters**
+| Tham số          | Bắt buộc | Kiểu dữ liệu | Mô tả |
+|----------------|--------|------------|------|
+| `page`        | ✅ | `integer` | Trang dữ liệu cần lấy |
+| `page_size`   | ✅ | `integer` | Số lượng dữ liệu mỗi trang |
+| `from_time`   | ✅ | `string` (datetime) | Thời gian bắt đầu (format: `YYYY-MM-DD HH:mm:ss`) |
+| `to_time`     | ✅ | `string` (datetime) | Thời gian kết thúc (format: `YYYY-MM-DD HH:mm:ss`) |
+| `identifier_id` | ✅ | `string` | ID của user/campaign cần lọc |
+| `campaign_id` | ❌ | `string/null` | ID của campaign (nếu có) |
+| `order_id` | ❌ | `string/null` | ID của order (nếu có) |
+| `click_id` | ❌ | `string/null` | ID của click (nếu có) |
+| `status` | ❌ | `string/null` | Trạng thái (nếu có) |
+
+---
+
+### ✅ **Success Response**
+- **📄 Status Code:** `200`
+- **📄 Content-Type:** `application/json`
+- **📤 Body:**
+    ```json
+    {
+        "status": "success",
+        "data": "eyJpdiI6IlV3WVo2VFhxQW1kbVY3dEFPR2RKZXc9PSIsInZhbHVlIjoiUzRDVXFhMDRoR3Q4a1lUeUJGQllXM3FSMzZrXC96M0tseHdKeFlBaWhUb212WEZ2WjNOaEpLckF0QUwrU3VtdDgrUkNqNTNwR21pTlQ1NWpVT1wvTUJNWnh2M2VlOTJ3NlN4dE1rMjRROE9mVmhvUWlNRnR4NHlsMnJqUXM4eFpmdTV0K3NJYXZzTENzbWlCVnIzQ3Btazk4MVoweUpDRzhJNHZ5MGZFcjA0NFE5Y0lYMjFEY243emxjYkVrWWk3T3Nva2FqRndvSGUwSjNNNmhvOXl0WTF5bnNrOUtENitGQk1NZVFsbE14T0ZIbkFPY2dsalFhSEs2bGJNZzBrN09pdnBCUVkrS0FHdmt2R1J5eDBKXC9vZXlLTm1ZZWZsSVEySnJQamdXWmZxWEkwS1ZObEtpOTkxanNVOTBQSXpiUVc4bEVHUXhqXC9YREE3M091eWFac1wvTDMrUkF0Y1daaktYcFMrN3VUVEFQeDFhMWpFQnQ5Nk5HVVVSYkdMKytjWkEiLCJtYWMiOiIyMmNjODBlZmY4ZTI1ZWUxNTlkMjdhMDAzOGIzZjM1MWNhMzE1ZWQzNTRjZWFkZjk1M2ZiYjk2NGM2NmEwNjhkIn0="
+    }
+    ```
+
+---
+
+### ❌ **Error Response**
+1. **Lỗi thiếu `identifier_id`**
+    - **📄 Status Code:** `400`
+    - **📄 Content-Type:** `application/json`
+    - **📤 Body:**
+      ```json
+      {
+          "status": "error",
+          "message": "The identifier_id field is required",
+          "errorCode": ""
+      }
+      ```
+
+---
+
+### **🛠 cURL Request**
+```sh
+curl --location 'https://pub-be-dev.mp.directsale.vn/api/v2/publisher/conversion?page=1&page_size=20&from_time=2025-01-01%2000%3A00%3A00&to_time=2025-01-30%2000%3A00%3A00&identifier_id=7037761629622108160&campaign_id=null&order_id=null&click_id=null&status=null' \
+--header 'X-Network-Id: 1' \
+--header 'X-Port-Type: PUB' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Bearer eyJpdiI6InVXUEFoekpIaUNzeVZtdXVvWkhLc0E9PSIsInZhbHVlIjoiTmJXMmplWkg4SHphVmJZdVwvWk53bGt6c2xGRXo0UENuR0Z5Mm9BbnNQeHBseXBReFJ3djJLMHh2NlJ3OVF4cDVZWjJnNlwvQ09sZEVxb0RBdDFDQ1RqVkpXME1pM2xhU05MZENwVmNuaWN3aTJMcVVGS0N2dDJZblRaZ0FaWXhvNEt5YmN3MHQrSm45T3Y5SWZtRlRDUStKeHV0SGprNEkxKzdkRVR2R0Y4a1pvWUo5QWxhcVRTTWFCQUNmR2pWRGUiLCJtYWMiOiIxZTNiN2E5OTQyNzg2YTlhYzlhYjUzYjQ3M2NiZDc5NmJmODA3NzhhYzE1ZDM1YTc0MDA0ZGMzODIxNjY3NDU5In0='
+
 ## 📌 API Tạo link chia sẻ
 - **🛣 URL:** `/api/v2/get-referral-link`
 - **📝 Method:** `POST`
