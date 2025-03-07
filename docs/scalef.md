@@ -222,6 +222,7 @@ Tổng hợp các API liên quan đến dự án Scalef.
                 ],
                 "permissions": []
             },
+             "tokenSdk":"eyJpdiI6IkJXRm1cL1VTOVZ1TmRRQlFNaXV1S0VBPT0iLCJ2YWx1ZSI6IjlOM2NpVUZxenhqUHN3cTVZQ3V2T1VRd1ZIYU9ZUEVZR0hSdFcrQTNNRXRFOTUwc3ZCaHdrWjQycVwvbEVKYmZ4SmxkZ0YycW13RDBJYnpvdHdcL3QrdysreW0wV000RnV6Q3huXC9WWkFTM1UwSnl5MTFEckpMcHVrYk1MajBLNlcrcjBxeVJ3N1ozWUNaWENrcjAwVXFWbnV3bzE4c2lwRGlzR3BlQXN0MEE1eUx2cEVRTXlhejM0RlUwenBVeXM0VSIsIm1hYyI6IjUwNWY4MzUxZmI4MmJkMmZkOTNlNDBhNDA0ZGE2YWRhOWUzNjdhOWJkOGZlZWY0YTg5MTNmNGU1YmU0NWVhY2IifQ==",
             "access_token": "62b697d9-11a9-48f9-b4f6-a8c8f1419b47",
             "token_type": "bearer",
             "refresh_token": "becfcffd-2d7b-4504-977b-24f6589d6717",
