@@ -12,7 +12,7 @@ Tổng hợp các API liên quan đến dự án Scalef.
 
 ## 🚀 Danh sách các API
 
-### 🔑 Tạo Bearer Token
+### 🔑 Tạo Token SDK
 - **🛣 URL:** `/api/v2/gen-token`
 - **📝 Method:** `POST`
 - **📩 Headers:**
@@ -249,15 +249,14 @@ Tổng hợp các API liên quan đến dự án Scalef.
     - `X-Network-Id: 1`
     - `X-Port-Type: PUB`
     - `Content-Type: application/json`
-    - `Authorization: Bearer <tokenSdk>`
+    - `Authorization: Bearer <TokenSDK>`
 
 - **🔢 Parameters:**
 
     | Tham số | Bắt buộc | Kiểu dữ liệu | Mô tả |
     |---------|---------|------------|------|
-    | `X-Network-Id` | ✅ | `integer` | ID của network |
-    | `X-Port-Type` | ✅ | `string` | Loại port (`PUB`) |
-    | `Authorization` | ✅ | `string` | Bearer token để xác thực user |
+    | `campaign_id` | ✅ | `integer` | ID Campaign |
+    | `identifier_id` | ✅ | `string` | Mã định danh user |
 
 #### ✅ Response Success:
 - **🆗 Status Code:** `200`
