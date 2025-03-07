@@ -292,6 +292,7 @@ Tổng hợp các API liên quan đến dự án Scalef.
     }
     ```
 ---
+
 ### 📌 QR Code
 - **🛣 URL:** `/api/v2/qr-code`
 - **📝 Method:** `GET`
