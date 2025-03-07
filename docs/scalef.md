@@ -12,7 +12,7 @@ Tổng hợp các API liên quan đến dự án Scalef.
 
 ## 🚀 Danh sách các API
 
-### 📌 Tạo Token SDK
+### 📌 API Tạo Token SDK
 - **🛣 URL:** `/api/v2/gen-token`
 - **📝 Method:** `POST`
 - **📩 Headers:**
@@ -49,7 +49,7 @@ Tổng hợp các API liên quan đến dự án Scalef.
     }
     ```
 
-### 📌 Giải mã dữ liệu
+### 📌 API Giải mã dữ liệu
 - **🛣 URL:** `/api/v2/decode-data`
 - **📝 Method:** `POST`
 - **📩 Headers:**
@@ -100,7 +100,7 @@ Tổng hợp các API liên quan đến dự án Scalef.
     ```
 ---
 
-### 🔗 Login Social
+### 📌 API Login Social
 - **🛣 URL:** `/api/v1/auth/social-signup`
 - **📝 Method:** `POST`
 - **📩 Headers:**
@@ -242,7 +242,7 @@ Tổng hợp các API liên quan đến dự án Scalef.
     ```
 ---
 
-### 📌 Tạo link chia sẻ
+### 📌 API Tạo link chia sẻ
 - **🛣 URL:** `/api/v2/get-referral-link`
 - **📝 Method:** `POST`
 - **📩 Headers:**
@@ -292,7 +292,7 @@ Tổng hợp các API liên quan đến dự án Scalef.
     ```
 ---
 
-### 📌 QR Code
+### 📌 API QR Code
 - **🛣 URL:** `/api/v2/qr-code`
 - **📝 Method:** `GET`
 - **📩 Headers:**
