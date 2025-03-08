@@ -298,7 +298,7 @@ Tổng hợp các API liên quan đến dự án Scalef.
     - `X-Network-Id: 1`
     - `X-Port-Type: PUB`
     - `Content-Type: application/json`
-    - `Authorization: Bearer <access_token>`
+    - `Authorization: Bearer <lấy ở access_token ở api login social>`
 
 ---
 
