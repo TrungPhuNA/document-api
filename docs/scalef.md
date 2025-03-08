@@ -300,20 +300,19 @@ Tổng hợp các API liên quan đến dự án Scalef.
     - `Content-Type: application/json`
     - `Authorization: Bearer <access_token>`
 
----
+- **🔢 Parameters**
 
-**🔢 Parameters**
-| Tham số          | Bắt buộc | Kiểu dữ liệu | Mô tả |
-|----------------|--------|------------|------|
-| `page`        | ✅ | `integer` | Trang dữ liệu cần lấy |
-| `page_size`   | ✅ | `integer` | Số lượng dữ liệu mỗi trang |
-| `from_time`   | ✅ | `string` (datetime) | Thời gian bắt đầu (format: `YYYY-MM-DD HH:mm:ss`) |
-| `to_time`     | ✅ | `string` (datetime) | Thời gian kết thúc (format: `YYYY-MM-DD HH:mm:ss`) |
-| `identifier_id` | ✅ | `string` | ID của user/campaign cần lọc |
-| `campaign_id` | ❌ | `string/null` | ID của campaign (nếu có) |
-| `order_id` | ❌ | `string/null` | ID của order (nếu có) |
-| `click_id` | ❌ | `string/null` | ID của click (nếu có) |
-| `status` | ❌ | `string/null` | Trạng thái (nếu có) |
+    | Tham số          | Bắt buộc | Kiểu dữ liệu | Mô tả |
+    |----------------|--------|------------|------|
+    | `page`        | ✅ | `integer` | Trang dữ liệu cần lấy |
+    | `page_size`   | ✅ | `integer` | Số lượng dữ liệu mỗi trang |
+    | `from_time`   | ✅ | `string` (datetime) | Thời gian bắt đầu (format: `YYYY-MM-DD HH:mm:ss`) |
+    | `to_time`     | ✅ | `string` (datetime) | Thời gian kết thúc (format: `YYYY-MM-DD HH:mm:ss`) |
+    | `identifier_id` | ✅ | `string` | ID của user/campaign cần lọc |
+    | `campaign_id` | ❌ | `string/null` | ID của campaign (nếu có) |
+    | `order_id` | ❌ | `string/null` | ID của order (nếu có) |
+    | `click_id` | ❌ | `string/null` | ID của click (nếu có) |
+    | `status` | ❌ | `string/null` | Trạng thái (nếu có) |
 
 ---
 
