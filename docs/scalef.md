@@ -291,7 +291,93 @@ Tổng hợp các API liên quan đến dự án Scalef.
     ```
 ---
 
-## 📌 API Report
+## 📌 API Report Publisher
+- **🛣 URL:** `/api/v1/report/overview`
+- **📝 Method:** `POST`
+- **📩 Headers:**
+    - `X-Network-Id: 1`
+    - `X-Port-Type: PUB`
+    - `Content-Type: application/json`
+    - `Authorization: Bearer <access_token>`
+
+---
+
+**🔢 Parameters**
+
+| Tham số       | Bắt buộc | Kiểu dữ liệu | Mô tả |
+|--------------|--------|------------|------|
+| `from_date`  | ✅ | `string` (YYYY-MM-DD) | Ngày bắt đầu của báo cáo |
+| `to_date`    | ✅ | `string` (YYYY-MM-DD) | Ngày kết thúc của báo cáo |
+| `campaigns`  | ❌ | `string/null` | ID chiến dịch (nếu có) |
+
+---
+
+✅ **Success Response**
+- **📄 Status Code:** `200`
+- **📄 Content-Type:** `application/json`
+- **📤 Body:**
+    ```json
+    {
+        "status": "success",
+        "data": {
+            "report": {
+                "current": {
+                    "status": "all",
+                    "from_date": "2025/03/01",
+                    "to_date": "2025/03/31",
+                    "total_count": 0,
+                    "group_by": "day",
+                    "data_group": [
+                        {
+                            "unit": "1740762000000",
+                            "value": 0
+                        }
+                    ],
+                    "meta": {
+                        "page": 0,
+                        "page_size": 0,
+                        "total": 0,
+                        "total_sale_amount": null,
+                        "total_pub_commission": null
+                    }
+                }
+            }
+        }
+    }
+    ```
+
+---
+
+❌ **Error Response**
+1. **Lỗi thiếu `to_date`**
+    - **📄 Status Code:** `400`
+    - **📄 Content-Type:** `application/json`
+    - **📤 Body:**
+      ```json
+      {
+          "status": "error",
+          "message": "Undefined index: to_date",
+          "errorCode": ""
+      }
+      ```
+
+---
+
+**🛠 cURL Request**
+```sh
+curl --location 'https://pub-be-dev.mp.directsale.vn/api/v1/report/overview' \
+--header 'X-Network-Id: 1' \
+--header 'X-Port-Type: PUB' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Bearer 6d205671-0eec-46ef-9568-3f802cf97b5e' \
+--data '{
+    "from_date": "2025-03-01",
+    "to_date": "2025-03-31",
+    "campaigns": ""
+}'
+```
+
+## 📌 API Report Conversion
 - **🛣 URL:** `/api/v2/publisher/conversion`
 - **📝 Method:** `GET`
 - **📩 Headers:**
